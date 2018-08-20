@@ -1,9 +1,11 @@
 import React from 'react'
  
-const MovieText = () => {
+const MovieText = ({ movies }) => {
   return(
-    <div>
-      hello
+    <div >
+      <p>{movies.opening_crawl}</p>
+      <h3>{movies.title}</h3>
+      <h3>{movies.release_date}</h3>
     </div>
   )
 }
