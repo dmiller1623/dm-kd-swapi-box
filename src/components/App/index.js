@@ -3,6 +3,7 @@ import './styles.css';
 import Header from '../Header';
 import CardContainer from '../CardContainer'
 import Button from '../Button'
+import MovieText from '../MovieText'
 
 class App extends Component {
   constructor () {
@@ -15,14 +16,20 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
-        <div className='header-parent'>
-          <Header numOfFaves={this.state.numOfFaves}/>
+        <div className='movie-parent'>
+          <MovieText />
         </div>
-        <div className='button-parent'>
-          <Button />
+        <div className='main-section'>
+          <div className='header-parent'>
+            <Header numOfFaves={this.state.numOfFaves}/>
+          </div>
+          <div className='button-parent'>
+            <Button />
+          </div>
+          <div className='card-container-parent'>
+            <CardContainer />
+          </div>
         </div>
-
-
       </div>
     );
   }
