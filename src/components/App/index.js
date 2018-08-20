@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../Header';
+import Button from '../Button';
 
 class App extends Component {
   constructor () {
@@ -12,10 +13,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div className="header-parent">
+      <div className='app'>
+        <div className='header-parent'>
           <Header numOfFaves={this.state.numOfFaves}/>
-          </div>
+        </div>
+        <div className='button-parent'>
+          <Button />
+        </div>
 
       </div>
     );
