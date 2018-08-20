@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../Header';
-import Button from '../Button';
+import CardContainer from '../CardContainer'
+import Button from '../Button'
 
 class App extends Component {
   constructor () {
@@ -20,6 +21,7 @@ class App extends Component {
         <div className='button-parent'>
           <Button />
         </div>
+
 
       </div>
     );
