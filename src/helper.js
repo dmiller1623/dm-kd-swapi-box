@@ -1,29 +1,35 @@
-export const dataScrape = (data, type) => {
-  // console.log('type', type)
-  // console.log('data', data)
-  const scrapedData = []
-  if (type === 'people') {
-    const scrapedPeople = data.results.map(person => {
-      // console.log(getData(person.species))
-      let personObject = {}
-        personObject['name'] = person.name
-        return fetch(person.species) 
-        .then(response => response.json())
-        .then(speciesData => ({...personObject, species: speciesData.name }))
-        console.log(personObject)
-    
-        return personObject 
-      })
-      console.log(scrapedPeople)
-      return Promise.all(scrapedPeople)
-    // const fetchedData = fetch('https://swapi.co/api/planets/1/').then(response => response.json())
-    // const homeworld = fetchedData
-    // const species = 'fake species'
-    // const population = 'fake pop'
+import { getData } from './fetch'
 
-    // scrapedData.push({'name': 'name'}, {'homeworld': fetchedData}, 'species', 'population')
-  // } else if (type[0] === 'vehicles') {
-  //   scrapedData.push({'name': 'name'})
+export const dataScrape = (data, type) => {
+
+  // const scrapedData = []
+  if (type === 'people') {
+    const fullData = data.results.map(person => {
+      let personObject = {}
+      let species = getData(person.species)
+      .then(species => ({...personObject, name: person.name, species: species.name }))
+
+      let location = getData(person.homeworld)
+      .then(location => ({...personObject, homeworld: location.name, population: location.population }))  
+      console.log(personObject)
+      return personObject
+    })
+
+
+    // const location = data.results.map(person => {
+    //   return getData(person.homeworld)
+    //   .then(location => ({ homeworld: location.name, population: location.population}))
+    // })
+    // scrapedData.push(...species, ...location)
+    // const answer = scrapedData.reduce((acc, data) => {
+    //   if (!acc[data.name]) {
+    //     acc[data.name] = {}
+    //   }
+    //   acc[data.name] += {name: data.name, species: data.species, homeworld: data.homeworld, population: data.population}
+    //   return acc
+    // }, [])
+    return Promise.all(fullData)
   }
-  // console.log('scrapedData', scrapedData)
 }
+// let personObject = {}
+//   // return personObject['name'] = person.name
