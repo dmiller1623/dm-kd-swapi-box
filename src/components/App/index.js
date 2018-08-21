@@ -26,10 +26,11 @@ class App extends Component {
     const movieUrl = 'https://swapi.co/api/films/'
     
 
-    // this.fetch(moviesUrl, 'movies')
-    // this.fetch(peopleUrl, 'people')
-    // this.fetch(planetsUrl, 'planets')
-    // this.fetch(vehiclesUrl, 'vehicles')
+    // this.getData(moviesUrl, 'movies')
+    this.getData(peopleUrl, 'people')
+    // console.log(this.state)
+    // this.getData(planetsUrl, 'planets')
+    // this.getData(vehiclesUrl, 'vehicles')
     
 
     this.setState( { movies: {title: 'Return of the Jedi', 
@@ -37,24 +38,36 @@ class App extends Component {
     release_date: '1983-05-25'} })
   }
 
-  fetch = (url, dataType) => {
+  getData = (url, dataType) => {
     fetch(url).then(response => response.json())
-    .then(data => {
-      console.log(dataType, data)
-      if(!dataType) return data
-      if (dataType === 'movies') {
-        this.setState({ [dataType]: data.results[4]})
-      } else {
-      this.setState({ [dataType]: data })
-      }
-    dataScrape([dataType], data)
 
+    .then(data => {
+      if (dataType === 'movies') {
+       this.setState({ [dataType]: data.results[4]})
+       return
+      }
+      dataScrape(data, dataType)
+      .then(completeObject => this.setState({ [dataType]: completeObject }))
     })
     .catch(error => {
     })
   }
 
+  filterDataType = (data, dataType) => {
+    console.log(data)
+      // console.log(dataType, data)
+      // if (dataType === 'movies') {
+      //  this.setState({ [dataType]: data.results[4]})
+      // } else {
+      this.setState({ [dataType]: data })
+
+  }
+
+
+
   render() {
+    // const { movies, people, vehicles, planets } = this.state
+    // console.log(people)
     return (
       <div className='app'>
         <div className='movie-parent'>
@@ -68,7 +81,10 @@ class App extends Component {
             <Button />
           </div>
           <div className='card-container-parent'>
-            <CardContainer />
+            <CardContainer 
+            people={this.state.people} 
+            vehicles={this.state.vehicles} 
+            planets={this.state.planets}/>
           </div>
         </div>
       </div>
