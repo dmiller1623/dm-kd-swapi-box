@@ -4,7 +4,7 @@ import Header from '../Header';
 import CardContainer from '../CardContainer'
 import Button from '../Button'
 import MovieText from '../MovieText';
-import { dataScrape } from '../../helper';
+import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from '../../helper';
 
 
 class App extends Component {
@@ -23,47 +23,48 @@ class App extends Component {
     const peopleUrl = 'https://swapi.co/api/people/'
     const planetsUrl = 'https://swapi.co/api/planets/'
     const vehiclesUrl = 'https://swapi.co/api/vehicles/'
-    const movieUrl = 'https://swapi.co/api/films/'
+    const moviesUrl = 'https://swapi.co/api/films/4/'
     
 
-    // this.getData(moviesUrl, 'movies')
-    this.getData(peopleUrl, 'people')
+    this.getMovieData(moviesUrl)
+    // this.getPeopleData(peopleUrl)
     // console.log(this.state)
-    // this.getData(planetsUrl, 'planets')
-    // this.getData(vehiclesUrl, 'vehicles')
+    // this.getPlanetData(planetsUrl)
+    // this.getVehicleData(vehiclesUrl)
     
 
-    this.setState( { movies: {title: 'Return of the Jedi', 
-    opening_crawl: 'Luke Skywalker has returned to his home planet of Tatooine in an attempt to rescue his friend Han Solo from the clutches of the vile gangster Jabba the Hutt. Little does Luke know that the GALACTIC EMPIRE has secretly begun construction on a new armored space',
-    release_date: '1983-05-25'} })
+    // this.setState( { movies: {title: 'Return of the Jedi', 
+    // opening_crawl: 'Luke Skywalker has returned to his home planet of Tatooine in an attempt to rescue his friend Han Solo from the clutches of the vile gangster Jabba the Hutt. Little does Luke know that the GALACTIC EMPIRE has secretly begun construction on a new armored space',
+    // release_date: '1983-05-25'} })
   }
 
-  getData = (url, dataType) => {
-    fetch(url).then(response => response.json())
-
-    .then(data => {
-      if (dataType === 'movies') {
-       this.setState({ [dataType]: data.results[4]})
-       return
-      }
-      dataScrape(data, dataType)
-      .then(completeObject => this.setState({ [dataType]: completeObject }))
-    })
-    .catch(error => {
-    })
+  getMovieData = async (url) => {
+    const response = await fetch(url)
+    const movies = await response.json()
+    // const movies = await movieScrape(info)
+    this.setState({ movies })
   }
 
-  filterDataType = (data, dataType) => {
-    console.log(data)
-      // console.log(dataType, data)
-      // if (dataType === 'movies') {
-      //  this.setState({ [dataType]: data.results[4]})
-      // } else {
-      this.setState({ [dataType]: data })
-
+  getPeopleData = async (url) => {
+    const response = await fetch(url)
+    const info = await response.json()
+    const people = await peopleScrape(info)
+    this.setState({ people })
   }
 
+  getPlanetData = async (url) => {
+    const response = await fetch(url)
+    const info = await response.json()
+    const planets = await planetScrape(info)
+    this.setState({ planets })
+  }
 
+  getVehicleData = async (url) => {
+    const response = await fetch(url)
+    const info = await response.json()
+    const vehicles = await vehicleScrape(info)
+    this.setState({ vehicles })
+  }
 
   render() {
     // const { movies, people, vehicles, planets } = this.state
