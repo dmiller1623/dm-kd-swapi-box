@@ -1,35 +1,51 @@
-import { getData } from './fetch'
+import { residentsScraper } from './residentsScraper'
 
-export const dataScrape = (data, type) => {
+export const peopleScrape = (data) => {
+  const peopleData = data.results.map(async (person) => {
+    const speciesResponse = await fetch(person.species)
+    const speciesInfo = await speciesResponse.json()
+    const locationResponse = await fetch(person.homeworld)
+    const locationInfo = await locationResponse.json()
+    const name = person.name
+    const species = speciesInfo.name
+    const homeworld = locationInfo.name
+    const population = locationInfo.population
 
-  // const scrapedData = []
-  if (type === 'people') {
-    const fullData = data.results.map(person => {
-      let personObject = {}
-      let species = getData(person.species)
-      .then(species => ({...personObject, name: person.name, species: species.name }))
-
-      let location = getData(person.homeworld)
-      .then(location => ({...personObject, homeworld: location.name, population: location.population }))  
-      console.log(personObject)
-      return personObject
-    })
-
-
-    // const location = data.results.map(person => {
-    //   return getData(person.homeworld)
-    //   .then(location => ({ homeworld: location.name, population: location.population}))
-    // })
-    // scrapedData.push(...species, ...location)
-    // const answer = scrapedData.reduce((acc, data) => {
-    //   if (!acc[data.name]) {
-    //     acc[data.name] = {}
-    //   }
-    //   acc[data.name] += {name: data.name, species: data.species, homeworld: data.homeworld, population: data.population}
-    //   return acc
-    // }, [])
-    return Promise.all(fullData)
-  }
+    return {name, species, homeworld, population}
+  })
+  return Promise.all(peopleData)
 }
-// let personObject = {}
-//   // return personObject['name'] = person.name
+
+export const planetScrape = (data) => {
+  const planetData = data.results.map(async (planet) => {
+    const residents = await residentsScraper(planet)
+    const name = planet.name
+    const terrain = planet.terrain
+    const population = planet.population
+    const climate = planet.climate
+
+    return {name, terrain, population, residents, climate}
+  })
+  return Promise.all(planetData)
+}
+
+export const vehicleScrape = (data) => {
+  const vehicleData = data.results.map(async (vehicle) => {
+    const name = vehicle.name
+    const model = vehicle.model
+    const type = vehicle.vehicle_class
+    const passengers = vehicle.passengers
+
+    return {name, model, type, passengers}
+  })
+  return Promise.all(vehicleData)
+}
+
+// export const movieScrape = (data) => {
+//   const movieData = data.results.find(async (movie) => {
+//     console.log(movie)
+//     return movie === 3
+//   })
+//   console.log(movieData)
+//   return movieData
+// }
