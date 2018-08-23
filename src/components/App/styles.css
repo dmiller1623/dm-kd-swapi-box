@@ -14,6 +14,7 @@
 
 .movie-parent {
   display: flex;
+  align-self: flex-start;
   justify-content: center;
   height: 100vh;
   margin: 0;
@@ -26,5 +27,5 @@
 
 .main-section {
   width: 75%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(https://wallpaper-house.com/data/out/7/wallpaper2you_150538.png); }

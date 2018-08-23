@@ -1,4 +1,7 @@
 .movie-text {
+  width: 25%;
+  height: 100vh;
+  position: fixed;
   color: #ddbe24;
   font-weight: bolder;
   text-align: center;
