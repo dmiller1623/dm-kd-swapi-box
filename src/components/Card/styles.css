@@ -1,0 +1,7 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 20rem; }
+
+.card-data {
+  color: white; }
