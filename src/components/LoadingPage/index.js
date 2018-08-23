@@ -1,10 +1,23 @@
 import React from 'react'
 import './styles.css'
 
-const LoadingPage = () => {
-  return(
-    <div className='loading-page'></div>
-  )
+const LoadingPage = ({ cardType }) => {
+  if(cardType === 'people') {
+    console.log(cardType)
+    return ( 
+      <div className='loading-page-people'></div>
+    )
+  }  
+  else if(cardType === 'planets') {
+    return (
+      <div className='loading-page-planets'></div>
+    )
+  }
+  else if(cardType === 'vehicles') {
+    return ( 
+       <div className='loading-page-vehicles'></div>
+    )
+  }  
 }
 
 export default LoadingPage

@@ -10,7 +10,6 @@ const Header = ({ numOfFaves, handleDisplayCards }) => {
       <div className='favorites-button'>
         <p className='favorites-div' onClick={(e) => handleDisplayCards(e)}>View Favorites</p>
         <div>{numOfFaves}</div>
-        
       </div>
     </div>
   )

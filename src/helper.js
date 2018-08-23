@@ -6,37 +6,37 @@ export const peopleScrape = (data) => {
     const speciesInfo = await speciesResponse.json()
     const locationResponse = await fetch(person.homeworld)
     const locationInfo = await locationResponse.json()
-    const name = person.name
-    const species = `Species: ${speciesInfo.name}`
-    const homeworld = `Homeworld: ${locationInfo.name}`
-    const population = `Pop: ${locationInfo.population}`
+    const first = person.name
+    const second = `Species: ${speciesInfo.name}`
+    const third = `Homeworld: ${locationInfo.name}`
+    const fourth = `Pop: ${locationInfo.population}`
 
-    return {name, species, homeworld, population}
+    return {first, second, third, fourth}
   })
   return Promise.all(peopleData)
 }
 
 export const planetScrape = (data) => {
   const planetData = data.results.map(async (planet) => {
-    const residents = await residentsScraper(planet)
-    const name = planet.name
-    const terrain = `Terrain: ${planet.terrain}`
-    const population = `Pop: ${planet.population}`
-    const climate = `Climate: ${planet.climate}`
+    const fifth = await residentsScraper(planet)
+    const first = planet.name
+    const second = `Terrain: ${planet.terrain}`
+    const third = `Pop: ${planet.population}`
+    const fourth = `Climate: ${planet.climate}`
 
-    return {name, terrain, population, residents, climate}
+    return {first, second, third, fourth, fifth}
   })
   return Promise.all(planetData)
 }
 
 export const vehicleScrape = (data) => {
   const vehicleData = data.results.map(async (vehicle) => {
-    const name = vehicle.name
-    const model = `Model: ${vehicle.model}`
-    const type = `Class: ${vehicle.vehicle_class}`
-    const passengers = `Passengers: ${vehicle.passengers}`
+    const first = vehicle.name
+    const second = `Model: ${vehicle.model}`
+    const third = `Class: ${vehicle.vehicle_class}`
+    const fourth = `Passengers: ${vehicle.passengers}`
 
-    return {name, model, type, passengers}
+    return {first, second, third, fourth}
   })
   return Promise.all(vehicleData)
 }
