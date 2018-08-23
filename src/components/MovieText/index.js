@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles.css'
+import PropTypes from 'prop-types'
  
 const MovieText = ({ movies }) => {
   return(    
@@ -10,5 +11,9 @@ const MovieText = ({ movies }) => {
       </marquee>
   )
 }
+
+// MovieText.propTypes = {
+//   movies: PropTypes.array
+// }
 
 export default MovieText

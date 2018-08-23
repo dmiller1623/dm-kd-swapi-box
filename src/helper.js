@@ -34,7 +34,7 @@ export const vehicleScrape = (data) => {
     const name = vehicle.name
     const model = `Model: ${vehicle.model}`
     const type = `Class: ${vehicle.vehicle_class}`
-    const passengers = `Passengers ${vehicle.passengers}`
+    const passengers = `Passengers: ${vehicle.passengers}`
 
     return {name, model, type, passengers}
   })

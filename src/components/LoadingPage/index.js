@@ -3,9 +3,7 @@ import './styles.css'
 
 const LoadingPage = () => {
   return(
-    <div className='loading-page'>
-      hey
-    </div>
+    <div className='loading-page'></div>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css'
+import PropTypes from 'prop-types'
 
 const Header = ({ numOfFaves, handleDisplayCards }) => {
   return (
@@ -13,6 +14,11 @@ const Header = ({ numOfFaves, handleDisplayCards }) => {
       </div>
     </div>
   )
+}
+
+Header.propTypes = {
+  numOfFaves: PropTypes.number,
+  handleDisplayCards: PropTypes.func
 }
 
 export default Header;

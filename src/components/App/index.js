@@ -4,7 +4,7 @@ import Header from '../Header';
 import CardContainer from '../CardContainer'
 import Button from '../Button'
 import MovieText from '../MovieText';
-import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from '../../helper';
+import { peopleScrape, planetScrape, vehicleScrape } from '../../helper';
 import LoadingPage from '../LoadingPage';
 
 
@@ -104,14 +104,11 @@ class App extends Component {
   }
 
     evaluateClass = (card) => {
-      console.log(card.first)
       let futureClass = 'fav-button'
       let favoriteNames = this.state.favorites.map(favorite => favorite.first)
       if(favoriteNames.includes(card.first)) futureClass += ' clicked'
       return futureClass
     }
-
-
 
    render() {
      if(this.state.isLoading) {

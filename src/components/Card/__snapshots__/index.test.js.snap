@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    evaluateClass={[Function]}
+    fifth={
+        Array [
+            Object {
+              "name": "name",
+            },
+          ]
+    }
+    first="first"
+    fourth="fourth"
+    second="second"
+    third="third"
+    updateFavorites={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className={undefined}
+          onClick={[Function]}
+>
+          FAV
+</button>,
+        <h2
+          className="card-data"
+>
+          first
+</h2>,
+        <h4
+          className="card-data"
+>
+          second
+</h4>,
+        <h4
+          className="card-data"
+>
+          third
+</h4>,
+        <h4
+          className="card-data"
+>
+          fourth
+</h4>,
+        <div
+          className="fifth-data"
+>
+          <h5
+                    className="card-data"
+          >
+                    Residents:
+          </h5>
+          <h5
+                    className="card-data"
+          >
+                    Object {
+                              "name": "name",
+                            }
+                    , 
+          </h5>
+</div>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "FAV",
+          "className": undefined,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "FAV",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "first",
+          "className": "card-data",
+        },
+        "ref": null,
+        "rendered": "first",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "second",
+          "className": "card-data",
+        },
+        "ref": null,
+        "rendered": "second",
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "third",
+          "className": "card-data",
+        },
+        "ref": null,
+        "rendered": "third",
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "fourth",
+          "className": "card-data",
+        },
+        "ref": null,
+        "rendered": "fourth",
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h5
+              className="card-data"
+>
+              Residents:
+</h5>,
+            false,
+            Array [
+              <h5
+                className="card-data"
+>
+                Object {
+                                "name": "name",
+                              }
+                , 
+</h5>,
+            ],
+          ],
+          "className": "fifth-data",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Residents:",
+              "className": "card-data",
+            },
+            "ref": null,
+            "rendered": "Residents:",
+            "type": "h5",
+          },
+          false,
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                Object {
+                  "name": "name",
+                },
+                ", ",
+              ],
+              "className": "card-data",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "name": "name",
+              },
+              ", ",
+            ],
+            "type": "h5",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className={undefined}
+            onClick={[Function]}
+>
+            FAV
+</button>,
+          <h2
+            className="card-data"
+>
+            first
+</h2>,
+          <h4
+            className="card-data"
+>
+            second
+</h4>,
+          <h4
+            className="card-data"
+>
+            third
+</h4>,
+          <h4
+            className="card-data"
+>
+            fourth
+</h4>,
+          <div
+            className="fifth-data"
+>
+            <h5
+                        className="card-data"
+            >
+                        Residents:
+            </h5>
+            <h5
+                        className="card-data"
+            >
+                        Object {
+                                    "name": "name",
+                                  }
+                        , 
+            </h5>
+</div>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "FAV",
+            "className": undefined,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "FAV",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "first",
+            "className": "card-data",
+          },
+          "ref": null,
+          "rendered": "first",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "second",
+            "className": "card-data",
+          },
+          "ref": null,
+          "rendered": "second",
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "third",
+            "className": "card-data",
+          },
+          "ref": null,
+          "rendered": "third",
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "fourth",
+            "className": "card-data",
+          },
+          "ref": null,
+          "rendered": "fourth",
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h5
+                className="card-data"
+>
+                Residents:
+</h5>,
+              false,
+              Array [
+                <h5
+                  className="card-data"
+>
+                  Object {
+                                    "name": "name",
+                                  }
+                  , 
+</h5>,
+              ],
+            ],
+            "className": "fifth-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Residents:",
+                "className": "card-data",
+              },
+              "ref": null,
+              "rendered": "Residents:",
+              "type": "h5",
+            },
+            false,
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  Object {
+                    "name": "name",
+                  },
+                  ", ",
+                ],
+                "className": "card-data",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "name": "name",
+                },
+                ", ",
+              ],
+              "type": "h5",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

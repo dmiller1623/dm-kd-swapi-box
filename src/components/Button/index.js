@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css'
+import PropTypes from 'prop-types'
 
 const Button = ({ handleDisplayCards  }) => {
   return (
@@ -9,6 +10,10 @@ const Button = ({ handleDisplayCards  }) => {
       <div className='button vehicles-button'  onClick={(e) => handleDisplayCards(e)}>vehicles</div>
     </div>
   )
+}
+
+Button.propTypes = {
+  handleDisplayCards: PropTypes.func
 }
 
 export default Button;

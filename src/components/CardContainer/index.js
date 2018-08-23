@@ -1,8 +1,7 @@
 import React from 'react'
 import './styles.css'
 import Card from '../Card'
-import { dataScrape } from '../../helper';
-
+import PropTypes from 'prop-types'
 
 const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateFavorites, evaluateClass }) => {
   // console.log(people)
@@ -76,6 +75,16 @@ const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateF
         </div>)}
     </div>
   )
+}
+
+CardContainer.propTypes = {
+  people: PropTypes.array,
+  vehicles: PropTypes.array,
+  planets: PropTypes.array,
+  cardType: PropTypes.string,
+  favorites: PropTypes.array,
+  updateFavorites: PropTypes.func,
+  evaluateClass: PropTypes.func,
 }
 
 export default CardContainer
