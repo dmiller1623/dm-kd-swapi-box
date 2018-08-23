@@ -13,7 +13,7 @@ class Card extends Component {
     // console.log(this.props)
     return(
       <div className='card'>
-        <button className={this.props.Favorited ? 'favorite-button clicked' : 'favorite-button' } onClick={() => this.props.updateFavorites(this.props)}>FAV</button>
+        <button className={this.props.evaluateClass(this.props)} onClick={() => this.props.updateFavorites(this.props)}>FAV</button>
         <h4 className='card-data'>{this.props.first}</h4>
         <h4 className='card-data'>{this.props.second}</h4>
         <h4 className='card-data'>{this.props.third}</h4>
