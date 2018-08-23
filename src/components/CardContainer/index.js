@@ -4,7 +4,7 @@ import Card from '../Card'
 import { dataScrape } from '../../helper';
 
 
-const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateFavorites, displayFavorites}) => {
+const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateFavorites, evaluateClass }) => {
   // console.log(people)
   const peopleData = people.map((person, index) => {
     return <Card 
@@ -16,6 +16,7 @@ const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateF
       key={index}
       updateFavorites={updateFavorites}
       favorites={favorites}
+      evaluateClass={evaluateClass}
       />
     })
     
@@ -29,6 +30,8 @@ const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateF
       key={index}
       updateFavorites={updateFavorites}
       favorites={favorites}
+      evaluateClass={evaluateClass}
+
       />
     })
     
@@ -42,19 +45,23 @@ const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateF
       key={index}
       updateFavorites={updateFavorites}
       favorites={favorites}
+      evaluateClass={evaluateClass}
+
       />
     })
     
     const favoritesData = favorites.map((favorite, index) => {
       return <Card
       first={favorite.first}
-      seocond={favorite.second}
+      second={favorite.second}
       third={favorite.third}
       fourth={favorite.fourth}
       fifth={favorite.fifth}
       key={index}
       favorites={favorites}
       updateFavorites={updateFavorites}
+      evaluateClass={evaluateClass}
+
     />
   }) 
   return (
