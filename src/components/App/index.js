@@ -112,7 +112,7 @@ class App extends Component {
 
    render() {
      if(this.state.isLoading) {
-      return (<LoadingPage />)
+      return (<LoadingPage cardType={this.state.cardType}/>)
      }
      else {
     return (
