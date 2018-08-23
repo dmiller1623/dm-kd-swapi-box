@@ -4,14 +4,9 @@ import Card from '../Card'
 import PropTypes from 'prop-types'
 
 const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateFavorites, evaluateClass }) => {
-  // console.log(people)
   const peopleData = people.map((person, index) => {
     return <Card 
-    // {...person}
-      first={person.name}
-      second={person.species}
-      third={person.homeworld}
-      fourth={person.population}
+      {...person}
       key={index}
       updateFavorites={updateFavorites}
       favorites={favorites}
@@ -19,50 +14,37 @@ const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateF
       />
     })
     
-    const planetData = planets.map((planet, index) => {
-      return <Card 
-      first={planet.name}
-      second={planet.terrain}
-      third={planet.population}
-      fourth={planet.climate}
-      fifth={planet.residents}
+  const planetData = planets.map((planet, index) => {
+    return <Card 
+      {...planet}
       key={index}
       updateFavorites={updateFavorites}
       favorites={favorites}
       evaluateClass={evaluateClass}
-
-      />
-    })
+    />
+  })
     
-    const vehiclesData = vehicles.map((vehicle, index) => {
-      return <Card
-      first={vehicle.name} 
-      second={vehicle.model}
-      third={vehicle.type}
-      fourth={vehicle.passengers}
+  const vehiclesData = vehicles.map((vehicle, index) => {
+    return <Card
+      {...vehicle}
       favorited={vehicle.favorited}
       key={index}
       updateFavorites={updateFavorites}
       favorites={favorites}
       evaluateClass={evaluateClass}
-
-      />
-    })
+    />
+  })
     
-    const favoritesData = favorites.map((favorite, index) => {
-      return <Card
-      first={favorite.first}
-      second={favorite.second}
-      third={favorite.third}
-      fourth={favorite.fourth}
-      fifth={favorite.fifth}
+  const favoritesData = favorites.map((favorite, index) => {
+    return <Card
+      {...favorite}
       key={index}
       favorites={favorites}
       updateFavorites={updateFavorites}
       evaluateClass={evaluateClass}
-
     />
   }) 
+  
   return (
     <div className='card-container'>
       {cardType === 'people' && peopleData}

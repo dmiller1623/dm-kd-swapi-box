@@ -4,11 +4,6 @@ import { shallow } from 'enzyme'
 
 describe('Card', () => {
   let wrapper
-  let mockFirst
-  let mockSecond
-  let mockThird
-  let mockFourth
-  let mockFifth
   let mockEvaluateClass
   let mockUpdateFavorites
   
