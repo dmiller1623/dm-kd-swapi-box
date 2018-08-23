@@ -35,6 +35,7 @@ export const vehicleScrape = (data) => {
     const model = vehicle.model
     const type = vehicle.vehicle_class
     const passengers = vehicle.passengers
+    const favorited = false
 
     return {name, model, type, passengers}
   })
