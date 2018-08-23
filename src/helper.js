@@ -7,9 +7,9 @@ export const peopleScrape = (data) => {
     const locationResponse = await fetch(person.homeworld)
     const locationInfo = await locationResponse.json()
     const name = person.name
-    const species = speciesInfo.name
-    const homeworld = locationInfo.name
-    const population = locationInfo.population
+    const species = `Species: ${speciesInfo.name}`
+    const homeworld = `Homeworld: ${locationInfo.name}`
+    const population = `Pop: ${locationInfo.population}`
 
     return {name, species, homeworld, population}
   })
@@ -20,9 +20,9 @@ export const planetScrape = (data) => {
   const planetData = data.results.map(async (planet) => {
     const residents = await residentsScraper(planet)
     const name = planet.name
-    const terrain = planet.terrain
-    const population = planet.population
-    const climate = planet.climate
+    const terrain = `Terrain: ${planet.terrain}`
+    const population = `Pop: ${planet.population}`
+    const climate = `Climate: ${planet.climate}`
 
     return {name, terrain, population, residents, climate}
   })
@@ -32,10 +32,9 @@ export const planetScrape = (data) => {
 export const vehicleScrape = (data) => {
   const vehicleData = data.results.map(async (vehicle) => {
     const name = vehicle.name
-    const model = vehicle.model
-    const type = vehicle.vehicle_class
-    const passengers = vehicle.passengers
-    const favorited = false
+    const model = `Model: ${vehicle.model}`
+    const type = `Class: ${vehicle.vehicle_class}`
+    const passengers = `Passengers ${vehicle.passengers}`
 
     return {name, model, type, passengers}
   })

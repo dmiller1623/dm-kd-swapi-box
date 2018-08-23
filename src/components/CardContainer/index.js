@@ -69,7 +69,11 @@ const CardContainer = ({ people, vehicles, planets, cardType, favorites, updateF
       {cardType === 'people' && peopleData}
       {cardType === 'planets' && planetData}
       {cardType === 'vehicles' && vehiclesData}
-      {cardType === 'favorites' && favoritesData}
+      {cardType === 'favorites' && 
+        (favorites.length ? favoritesData : 
+        <div className='favorites-text'>
+          No Favorites Selected
+        </div>)}
     </div>
   )
 }

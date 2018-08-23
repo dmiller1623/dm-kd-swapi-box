@@ -31,7 +31,6 @@ class App extends Component {
   getMovieData = async (url) => {
     const response = await fetch(url)
     const movies = await response.json()
-    // const movies = await movieScrape(info)
     this.setState({ movies })
   }
 
@@ -84,7 +83,6 @@ class App extends Component {
       this.setState({ cardType: 'vehicles' })
       
     } else if(event.target.className === 'favorites-div') {
-      // console.log('hey')
       this.setState({ cardType: 'favorites'})
     }
   }

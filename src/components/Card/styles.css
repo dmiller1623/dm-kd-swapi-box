@@ -8,3 +8,12 @@
 
 .clicked {
   background-color: red; }
+
+.fifth-data {
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0 auto; }
+
+h5 {
+  margin: 0; }
