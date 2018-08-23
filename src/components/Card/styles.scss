@@ -18,8 +18,14 @@
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 0 auto;
+  margin-bottom: 20px;
 }
 
 h5 {
   margin: 0;
+}
+
+.spacing {
+  margin: 0 5px;
+  color: grey;
 }

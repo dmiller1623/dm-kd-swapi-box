@@ -12,10 +12,10 @@ const Card = (props) => {
       <h4 className='card-data'>{props.fourth}</h4>
       {props.fifth && <div className='fifth-data'>
         <h5 className='card-data'>Residents:</h5>
-        {!props.fifth.length && <h5 className='card-data'>0</h5>}
+        {!props.fifth.length && <h5 className='card-data spacing'>0</h5>}
         { 
           props.fifth.map((person, i) => {
-            return <h5 key={i} className='card-data'>{person}, </h5>
+            return <h5 key={i} className='card-data spacing'>{person}</h5>
           })
         }
       </div>}
