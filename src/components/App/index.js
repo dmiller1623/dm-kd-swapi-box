@@ -17,7 +17,7 @@ class App extends Component {
       people: [],
       vehicles: [],
       planets: [], 
-      cardType: 'null',
+      cardType: 'welcome',
       favorites: [],
       isLoading: false
     })
@@ -36,28 +36,29 @@ class App extends Component {
 
   getPeopleData = async (url) => {
     if(this.state.people.length) return 
+
     this.setState({ isLoading: true })
     const response = await fetch(url)
     const info = await response.json()
     const people = await peopleScrape(info)
     this.setState({ people })
     await this.setState({ isLoading: false })
-
   }
 
   getPlanetData = async (url) => {
     if(this.state.planets.length) return 
+
     this.setState({ isLoading: true })
     const response = await fetch(url)
     const info = await response.json()
     const planets = await planetScrape(info)
     this.setState({ planets })
     await this.setState({ isLoading: false })
-
   }
 
   getVehicleData = async (url) => {
     if(this.state.vehicles.length) return 
+
     this.setState({ isLoading: true })
     const response = await fetch(url)
     const info = await response.json()
@@ -66,23 +67,29 @@ class App extends Component {
     await this.setState({ isLoading: false })
   }
 
-  handleDisplayCards = (event) => {
+  evaluateButtonClass = (type) => {
+    let futureClass = 'button'
+    if (type === this.state.cardType) futureClass += ' selected'
+    return futureClass
+  }
+
+  handleDisplayCards = async (event) => {
     const peopleUrl = 'https://swapi.co/api/people/'
     const planetsUrl = 'https://swapi.co/api/planets/'
     const vehiclesUrl = 'https://swapi.co/api/vehicles/'
-    if(event.target.className === 'button people-button') {
+    if(event.target.id === 'people') {
       this.getPeopleData(peopleUrl)
       this.setState({ cardType: 'people' })
-
-    } else if(event.target.className === 'button planets-button') {
+      
+    } else if(event.target.id === 'planets') {
       this.getPlanetData(planetsUrl)
       this.setState({ cardType: 'planets' })
       
-    } else if(event.target.className === 'button vehicles-button') {
+    } else if(event.target.id === 'vehicles') {
       this.getVehicleData(vehiclesUrl)
       this.setState({ cardType: 'vehicles' })
       
-    } else if(event.target.className === 'favorites-div') {
+    } else if(event.target.id === 'favorites') {
       this.setState({ cardType: 'favorites'})
     }
   }
@@ -125,20 +132,24 @@ class App extends Component {
             <Header 
             numOfFaves={this.state.numOfFaves}
             handleDisplayCards={this.handleDisplayCards}
+            evaluateButtonClass={this.evaluateButtonClass}
             />
           </div>
           <div className='button-parent'>
-            <Button handleDisplayCards={this.handleDisplayCards}/>
+            <Button 
+            handleDisplayCards={this.handleDisplayCards}
+            evaluateButtonClass={this.evaluateButtonClass}/>
           </div>
           <div className='card-container-parent'>
+          {this.state.cardType === 'welcome' && <h1 className='welcome-message'>Select a button from above</h1>}
             <CardContainer 
-            people={this.state.people} 
-            vehicles={this.state.vehicles} 
-            planets={this.state.planets}
-            cardType={this.state.cardType}
-            updateFavorites={this.updateFavorites}
-            favorites={this.state.favorites}
-            evaluateClass={this.evaluateClass}
+              people={this.state.people} 
+              vehicles={this.state.vehicles} 
+              planets={this.state.planets}
+              cardType={this.state.cardType}
+              updateFavorites={this.updateFavorites}
+              favorites={this.state.favorites}
+              evaluateClass={this.evaluateClass}
             />
           </div>
         </div>

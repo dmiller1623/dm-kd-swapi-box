@@ -1,9 +1,25 @@
 .button-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 40vw;
+}
+
+.button {
+  height: 40px;
+  width: 350px;
+  border: solid 2px white;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 0 3.5rem
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+.selected {
+  color: #f7d700;
+  border-color: #f7d700;
 }
