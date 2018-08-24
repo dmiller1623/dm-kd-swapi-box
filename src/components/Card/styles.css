@@ -3,15 +3,11 @@
   border-radius: 15px;
   box-shadow: 10px 5px 5px #202020;
   background-size: contain;
-  justify-content: space-around;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   width: 20rem;
   height: 23.5rem; }
-
-.fav-button:hover {
-  background-color: #F7D700; }
 
 .card-data {
   overflow-wrap: normal;
@@ -27,7 +23,7 @@
   border-radius: 10px;
   margin-right: .8rem;
   outline: none;
-  width: 15%;
+  width: 3rem;
   color: white;
   background-color: black; }
 
@@ -43,15 +39,19 @@
   margin-bottom: 20px; }
 
 h4 {
-  font-size: 1rem; }
+  font-size: 1.1rem; }
 
 h5 {
   margin: 0; }
 
 h2 {
-  font-size: 2rem;
-  text-align: center; }
+  font-size: 2rem; }
 
 .spacing {
   margin: 0 5px;
   color: grey; }
+
+.first-data {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px; }

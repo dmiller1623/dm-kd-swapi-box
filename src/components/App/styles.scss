@@ -3,6 +3,12 @@
   align-items: center;
 }
 
+.welcome-message {
+  color: #f3f3f3;
+  width: 100%;
+  text-align: center;
+}
+
 .header-parent {
   color: #f3f3f3;
   display: flex;
@@ -34,5 +40,5 @@
 .main-section {
   width: 75%;
   min-height: 100vh;
-  background-image: url(https://wallpaper-house.com/data/out/7/wallpaper2you_150538.png)
+  background-color: black;
 }

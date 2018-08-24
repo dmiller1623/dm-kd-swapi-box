@@ -2,14 +2,15 @@ import React from 'react';
 import './styles.css'
 import PropTypes from 'prop-types'
 
-const Header = ({ numOfFaves, handleDisplayCards }) => {
+const Header = ({ numOfFaves, handleDisplayCards, evaluateButtonClass }) => {
   return (
     <div className='header'>
       <div></div>
       <img src='https://fontmeme.com/permalink/180823/038124195840fbb42b03e437645af736.png'></img>
       <div className='favorites-button'>
-        <p className='favorites-div' onClick={(e) => handleDisplayCards(e)}>View Favorites</p>
-        <div>{numOfFaves}</div>
+        <p className={evaluateButtonClass('favorites')} id='favorites' onClick={(e) => handleDisplayCards(e)}>View Favorites
+        <div className='fav-num'>{numOfFaves}</div>
+        </p>
       </div>
     </div>
   )
