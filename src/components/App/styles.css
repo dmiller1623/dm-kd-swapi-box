@@ -23,7 +23,7 @@
 .card-container-parent {
   margin-top: 2rem;
   display: flex;
-  justify-content: center; }
+  justify-content: space-around; }
 
 .main-section {
   width: 75%;
