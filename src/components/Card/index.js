@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 const Card = (props) => {
   return(
     <div className='card'>
-      <button className={props.evaluateClass(props)} onClick={() => props.updateFavorites(props)}>FAV</button>
       <h2 className='card-data'>{props.first}</h2>
       <h4 className='card-data'>{props.second}</h4>
       <h4 className='card-data'>{props.third}</h4>
@@ -19,6 +18,9 @@ const Card = (props) => {
           })
         }
       </div>}
+      <div className='button-spacing'>
+        <button className={props.evaluateClass(props)} onClick={() => props.updateFavorites(props)}>FAV</button>
+      </div>
     </div>
   )
 }
