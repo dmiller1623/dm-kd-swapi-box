@@ -2,22 +2,16 @@ import { residentsScraper } from './residentsScraper'
 
 export const peopleScrape = (data) => {
   const peopleData = data.results.map(async (person) => {
-    try {
-      const speciesResponse = await fetch(person.species)
-      const speciesInfo = await speciesResponse.json()
-      const locationResponse = await fetch(person.homeworld)
-      const locationInfo = await locationResponse.json()
-      const first = person.name
-      const second = `Species: ${speciesInfo.name}`
-      const third = `Homeworld: ${locationInfo.name}`
-      const fourth = `Pop: ${locationInfo.population}`
+    const speciesResponse = await fetch(person.species)
+    const speciesInfo = await speciesResponse.json()
+    const locationResponse = await fetch(person.homeworld)
+    const locationInfo = await locationResponse.json()
+    const first = person.name
+    const second = `Species: ${speciesInfo.name}`
+    const third = `Homeworld: ${locationInfo.name}`
+    const fourth = `Pop: ${locationInfo.population}`
 
-      return {first, second, third, fourth}
-
-    } catch(error) {
-      throw new Error(error.message)
-    }
-
+    return {first, second, third, fourth}
   })
   return Promise.all(peopleData)
 }
@@ -31,7 +25,6 @@ export const planetScrape = (data) => {
     const fourth = `Climate: ${planet.climate}`
 
     return {first, second, third, fourth, fifth}
-
   })
   return Promise.all(planetData)
 }
