@@ -5,10 +5,12 @@ import { shallow } from 'enzyme'
 describe('Header', () => {
   let wrapper 
   let mockHandleDisplay
+  let mockEvaluateButtonClass
 
   beforeEach(() => {
     mockHandleDisplay = jest.fn()
-    wrapper = shallow(<Header handleDisplayCards={mockHandleDisplay}/>)
+    mockEvaluateButtonClass = jest.fn()
+    wrapper = shallow(<Header handleDisplayCards={mockHandleDisplay} evaluateButtonClass={mockEvaluateButtonClass}/>)
   })
 
   it('should match the snapshot', () => {
@@ -16,7 +18,7 @@ describe('Header', () => {
   })
 
   it('should call handleDisplay cards when the fav button is clicked', () => {
-    wrapper.find('.favorites-div').simulate('click')
+    wrapper.find('#favorites').simulate('click')
     expect(mockHandleDisplay).toHaveBeenCalled()
   })
 })

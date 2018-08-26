@@ -21,7 +21,7 @@ ShallowWrapper {
           className="movie-parent"
 >
           <MovieText
-                    movies={Array []}
+                    movies={Object {}}
           />
 </div>,
         <div
@@ -74,7 +74,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <MovieText
-            movies={Array []}
+            movies={Object {}}
 />,
           "className": "movie-parent",
         },
@@ -84,7 +84,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "movies": Array [],
+            "movies": Object {},
           },
           "ref": null,
           "rendered": null,
@@ -266,7 +266,7 @@ ShallowWrapper {
             className="movie-parent"
 >
             <MovieText
-                        movies={Array []}
+                        movies={Object {}}
             />
 </div>,
           <div
@@ -319,7 +319,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <MovieText
-              movies={Array []}
+              movies={Object {}}
 />,
             "className": "movie-parent",
           },
@@ -329,7 +329,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "movies": Array [],
+              "movies": Object {},
             },
             "ref": null,
             "rendered": null,

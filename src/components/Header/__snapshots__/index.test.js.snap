@@ -4,6 +4,7 @@ exports[`Header should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
+    evaluateButtonClass={[Function]}
     handleDisplayCards={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -20,19 +21,22 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div />,
-        <h1>
-          SWAPI-Box
-</h1>,
+        <img
+          src="https://fontmeme.com/permalink/180823/038124195840fbb42b03e437645af736.png"
+/>,
         <div
           className="favorites-button"
 >
           <p
-                    className="favorites-div"
+                    className={undefined}
+                    id="favorites"
                     onClick={[Function]}
           >
                     View Favorites
+                    <div
+                              className="fav-num"
+                    />
           </p>
-          <div />
 </div>,
       ],
       "className": "header",
@@ -53,55 +57,63 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "SWAPI-Box",
+          "src": "https://fontmeme.com/permalink/180823/038124195840fbb42b03e437645af736.png",
         },
         "ref": null,
-        "rendered": "SWAPI-Box",
-        "type": "h1",
+        "rendered": null,
+        "type": "img",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <p
-              className="favorites-div"
-              onClick={[Function]}
+          "children": <p
+            className={undefined}
+            id="favorites"
+            onClick={[Function]}
 >
-              View Favorites
+            View Favorites
+            <div
+                        className="fav-num"
+            />
 </p>,
-            <div />,
-          ],
           "className": "favorites-button",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "View Favorites",
-              "className": "favorites-div",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "View Favorites",
-            "type": "p",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "View Favorites",
+              <div
+                className="fav-num"
+/>,
+            ],
+            "className": undefined,
+            "id": "favorites",
+            "onClick": [Function],
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
+          "ref": null,
+          "rendered": Array [
+            "View Favorites",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "fav-num",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
             },
-            "ref": null,
-            "rendered": null,
-            "type": "div",
-          },
-        ],
+          ],
+          "type": "p",
+        },
         "type": "div",
       },
     ],
@@ -115,19 +127,22 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div />,
-          <h1>
-            SWAPI-Box
-</h1>,
+          <img
+            src="https://fontmeme.com/permalink/180823/038124195840fbb42b03e437645af736.png"
+/>,
           <div
             className="favorites-button"
 >
             <p
-                        className="favorites-div"
+                        className={undefined}
+                        id="favorites"
                         onClick={[Function]}
             >
                         View Favorites
+                        <div
+                                    className="fav-num"
+                        />
             </p>
-            <div />
 </div>,
         ],
         "className": "header",
@@ -148,55 +163,63 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "SWAPI-Box",
+            "src": "https://fontmeme.com/permalink/180823/038124195840fbb42b03e437645af736.png",
           },
           "ref": null,
-          "rendered": "SWAPI-Box",
-          "type": "h1",
+          "rendered": null,
+          "type": "img",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              <p
-                className="favorites-div"
-                onClick={[Function]}
+            "children": <p
+              className={undefined}
+              id="favorites"
+              onClick={[Function]}
 >
-                View Favorites
+              View Favorites
+              <div
+                            className="fav-num"
+              />
 </p>,
-              <div />,
-            ],
             "className": "favorites-button",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "View Favorites",
-                "className": "favorites-div",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "View Favorites",
-              "type": "p",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "View Favorites",
+                <div
+                  className="fav-num"
+/>,
+              ],
+              "className": undefined,
+              "id": "favorites",
+              "onClick": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
+            "ref": null,
+            "rendered": Array [
+              "View Favorites",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "fav-num",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
               },
-              "ref": null,
-              "rendered": null,
-              "type": "div",
-            },
-          ],
+            ],
+            "type": "p",
+          },
           "type": "div",
         },
       ],
