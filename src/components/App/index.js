@@ -130,7 +130,6 @@ class App extends Component {
 
   evaluateClass = (card) => {
     let futureClass = 'fav-button';
-
     let favoriteNames = this.state.favorites.map(favorite => favorite.first);
 
     if (favoriteNames.includes(card.first)) futureClass += ' clicked';
@@ -160,8 +159,8 @@ class App extends Component {
                 handleDisplayCards={this.handleDisplayCards}
                 evaluateButtonClass={this.evaluateButtonClass}/>
             </div>
+            {this.state.cardType === 'welcome' && <h1 className='welcome-message'>Select a button from above</h1>}
             <div className='card-container-parent'>
-              {this.state.cardType === 'welcome' && <h1 className='welcome-message'>Select a button from above</h1>}
               <CardContainer 
                 people={this.state.people} 
                 vehicles={this.state.vehicles} 

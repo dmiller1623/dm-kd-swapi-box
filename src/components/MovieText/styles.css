@@ -1,11 +1,11 @@
 .movie-text {
-  width: 25%;
-  height: 100vh;
-  position: fixed;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsWrlqShOpNL4SbAwB24CkJuGgezSJoX5KDsQDGPvTWpa-MtZ8mw);
   color: #ddbe24;
   font-weight: bolder;
+  height: 100vh;
+  position: fixed;
   text-align: center;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsWrlqShOpNL4SbAwB24CkJuGgezSJoX5KDsQDGPvTWpa-MtZ8mw); }
+  width: 25%; }
 
 .crawl-text {
   font-size: 35px; }

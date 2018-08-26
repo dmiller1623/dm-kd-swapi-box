@@ -1,15 +1,15 @@
 .header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 90%; }
 
 .favorites-button {
-  height: 3rem;
-  width: 10rem;
-  display: flex;
   align-items: center;
-  justify-content: space-between; }
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  width: 10rem; }
 
 .fav-num {
   margin-left: 10px; }
