@@ -1,15 +1,15 @@
-import React from 'react'
-import Card from './index.js'
-import { shallow } from 'enzyme'
+import React from 'react';
+import Card from './index.js';
+import { shallow } from 'enzyme';
 
 describe('Card', () => {
-  let wrapper
-  let mockEvaluateClass
-  let mockUpdateFavorites
+  let wrapper;
+  let mockEvaluateClass;
+  let mockUpdateFavorites;
   
   beforeEach(() => {
-    mockEvaluateClass = jest.fn()
-    mockUpdateFavorites = jest.fn()
+    mockEvaluateClass = jest.fn();
+    mockUpdateFavorites = jest.fn();
     
     wrapper = shallow(<Card 
       first='first' 
@@ -19,23 +19,23 @@ describe('Card', () => {
       fifth={[{name: 'name'}]}
       evaluateClass={mockEvaluateClass}
       updateFavorites={mockUpdateFavorites}
-      />)
-  })
+    />);
+  });
 
   it('should match the snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('should invoke updateFavorites and evaluateClass on click', () => {
-    wrapper.find('button').simulate('click')
+    wrapper.find('button').simulate('click');
 
-    expect(mockEvaluateClass).toHaveBeenCalled()        
-    expect(mockUpdateFavorites).toHaveBeenCalled()
-  })
+    expect(mockEvaluateClass).toHaveBeenCalled();        
+    expect(mockUpdateFavorites).toHaveBeenCalled();
+  });
 
   it('should render a fifth dataset if the data is coming in', () => {
-    expect(wrapper.find('.card-data').length).toEqual(6)
-    expect(wrapper.find('.fifth-data').length).toEqual(1)
+    expect(wrapper.find('.card-data').length).toEqual(6);
+    expect(wrapper.find('.fifth-data').length).toEqual(1);
 
     wrapper = shallow(<Card 
       first='first' 
@@ -44,10 +44,10 @@ describe('Card', () => {
       fourth='fourth'
       evaluateClass={mockEvaluateClass}
       updateFavorites={mockUpdateFavorites}
-      />)
+    />);
 
-      expect(wrapper.find('.card-data').length).toEqual(4)
-      expect(wrapper.find('.fifth-data').length).toEqual(0)
+    expect(wrapper.find('.card-data').length).toEqual(4);
+    expect(wrapper.find('.fifth-data').length).toEqual(0);
 
-  })
-})
+  });
+});
