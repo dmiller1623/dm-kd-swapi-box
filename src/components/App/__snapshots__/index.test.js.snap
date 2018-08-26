@@ -44,14 +44,14 @@ ShallowWrapper {
                               handleDisplayCards={[Function]}
                     />
           </div>
+          <h1
+                    className="welcome-message"
+          >
+                    Select a button from above
+          </h1>
           <div
                     className="card-container-parent"
           >
-                    <h1
-                              className="welcome-message"
-                    >
-                              Select a button from above
-                    </h1>
                     <CardContainer
                               cardType="welcome"
                               evaluateClass={[Function]}
@@ -115,14 +115,14 @@ ShallowWrapper {
                             handleDisplayCards={[Function]}
               />
 </div>,
+            <h1
+              className="welcome-message"
+>
+              Select a button from above
+</h1>,
             <div
               className="card-container-parent"
 >
-              <h1
-                            className="welcome-message"
-              >
-                            Select a button from above
-              </h1>
               <CardContainer
                             cardType="welcome"
                             evaluateClass={[Function]}
@@ -197,56 +197,47 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                <h1
-                  className="welcome-message"
->
-                  Select a button from above
-</h1>,
-                <CardContainer
-                  cardType="welcome"
-                  evaluateClass={[Function]}
-                  favorites={Array []}
-                  people={Array []}
-                  planets={Array []}
-                  updateFavorites={[Function]}
-                  vehicles={Array []}
+              "children": "Select a button from above",
+              "className": "welcome-message",
+            },
+            "ref": null,
+            "rendered": "Select a button from above",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <CardContainer
+                cardType="welcome"
+                evaluateClass={[Function]}
+                favorites={Array []}
+                people={Array []}
+                planets={Array []}
+                updateFavorites={[Function]}
+                vehicles={Array []}
 />,
-              ],
               "className": "card-container-parent",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Select a button from above",
-                  "className": "welcome-message",
-                },
-                "ref": null,
-                "rendered": "Select a button from above",
-                "type": "h1",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "cardType": "welcome",
+                "evaluateClass": [Function],
+                "favorites": Array [],
+                "people": Array [],
+                "planets": Array [],
+                "updateFavorites": [Function],
+                "vehicles": Array [],
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "cardType": "welcome",
-                  "evaluateClass": [Function],
-                  "favorites": Array [],
-                  "people": Array [],
-                  "planets": Array [],
-                  "updateFavorites": [Function],
-                  "vehicles": Array [],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": "div",
           },
         ],
@@ -289,14 +280,14 @@ ShallowWrapper {
                                     handleDisplayCards={[Function]}
                         />
             </div>
+            <h1
+                        className="welcome-message"
+            >
+                        Select a button from above
+            </h1>
             <div
                         className="card-container-parent"
             >
-                        <h1
-                                    className="welcome-message"
-                        >
-                                    Select a button from above
-                        </h1>
                         <CardContainer
                                     cardType="welcome"
                                     evaluateClass={[Function]}
@@ -360,14 +351,14 @@ ShallowWrapper {
                                 handleDisplayCards={[Function]}
                 />
 </div>,
+              <h1
+                className="welcome-message"
+>
+                Select a button from above
+</h1>,
               <div
                 className="card-container-parent"
 >
-                <h1
-                                className="welcome-message"
-                >
-                                Select a button from above
-                </h1>
                 <CardContainer
                                 cardType="welcome"
                                 evaluateClass={[Function]}
@@ -442,56 +433,47 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  <h1
-                    className="welcome-message"
->
-                    Select a button from above
-</h1>,
-                  <CardContainer
-                    cardType="welcome"
-                    evaluateClass={[Function]}
-                    favorites={Array []}
-                    people={Array []}
-                    planets={Array []}
-                    updateFavorites={[Function]}
-                    vehicles={Array []}
+                "children": "Select a button from above",
+                "className": "welcome-message",
+              },
+              "ref": null,
+              "rendered": "Select a button from above",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <CardContainer
+                  cardType="welcome"
+                  evaluateClass={[Function]}
+                  favorites={Array []}
+                  people={Array []}
+                  planets={Array []}
+                  updateFavorites={[Function]}
+                  vehicles={Array []}
 />,
-                ],
                 "className": "card-container-parent",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Select a button from above",
-                    "className": "welcome-message",
-                  },
-                  "ref": null,
-                  "rendered": "Select a button from above",
-                  "type": "h1",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "cardType": "welcome",
+                  "evaluateClass": [Function],
+                  "favorites": Array [],
+                  "people": Array [],
+                  "planets": Array [],
+                  "updateFavorites": [Function],
+                  "vehicles": Array [],
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "cardType": "welcome",
-                    "evaluateClass": [Function],
-                    "favorites": Array [],
-                    "people": Array [],
-                    "planets": Array [],
-                    "updateFavorites": [Function],
-                    "vehicles": Array [],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": "div",
             },
           ],

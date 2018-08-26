@@ -4,17 +4,17 @@
   width: 40vw; }
 
 .button {
-  height: 40px;
-  width: 350px;
+  align-items: center;
   border: solid 2px white;
   border-radius: 40px;
   display: flex;
+  height: 40px;
   justify-content: center;
-  align-items: center; }
+  width: 350px; }
 
 .button:hover {
   cursor: pointer; }
 
 .selected {
-  color: #f7d700;
-  border-color: #f7d700; }
+  border-color: #f7d700;
+  color: #f7d700; }

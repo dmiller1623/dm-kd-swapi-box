@@ -5,14 +5,13 @@
 }
 
 .button {
-  height: 40px;
-  width: 350px;
+  align-items: center;
   border: solid 2px white;
   border-radius: 40px;
   display: flex;
+  height: 40px;
   justify-content: center;
-  align-items: center;
-  // margin: 0 3.5rem
+  width: 350px;
 }
 
 .button:hover {
@@ -20,6 +19,6 @@
 }
 
 .selected {
-  color: #f7d700;
   border-color: #f7d700;
+  color: #f7d700;
 }
