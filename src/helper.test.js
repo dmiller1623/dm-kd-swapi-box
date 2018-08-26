@@ -3,15 +3,6 @@ import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from './helper
 describe('peopleScrape, planetScrape, and vehicleScrape', () => {
   let mockData
 
-  beforeEach(() => {
-    // mockData = { results: [ { species: "https://swapi.co/api/species/2/" }, { homeworld:'https://swapi.co/api/planets/8/'} ]}
-    // window.fetch = jest.fn().mockImplementation(() => 
-    // Promise.resolve({
-    //   ok: true, 
-    //   json: () => Promise.resolve({ name: 'human', population: 1 })
-    // }))
-  })
-
   it('planetScrape should return the right species and homeworld', async () => {
     mockData = { results: [ { species: "https://swapi.co/api/species/2/" }, { homeworld:'https://swapi.co/api/planets/8/'} ]}
     window.fetch = jest.fn().mockImplementation(() => 

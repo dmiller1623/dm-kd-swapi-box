@@ -13,7 +13,8 @@ const Button = ({ handleDisplayCards, evaluateButtonClass }) => {
 }
 
 Button.propTypes = {
-  handleDisplayCards: PropTypes.func
+  handleDisplayCards: PropTypes.func,
+  evaluateButtonClass: PropTypes.func
 }
 
 export default Button;

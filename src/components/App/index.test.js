@@ -121,6 +121,105 @@ describe('App', () => {
     expect(results).toEqual('fav-button clicked')
   })
 
-  it('evaluateButtonClass  ')
+  it('evaluateButtonClass should have the class of button and selected', () => {
+    let mockType = 'people'
+    wrapper.setState({ cardType: mockType })
+    const results = wrapper.instance().evaluateButtonClass(mockType)
+    expect(results).toEqual('button selected')
+  })
+
+  it('evaluateButtonClass should have the class button', () => {
+    let mockType = 'people'
+    wrapper.setState({ cardType: 'planets' })
+    const results = wrapper.instance().evaluateButtonClass(mockType)
+    expect(results).toEqual('button')
+  })
+
+  it('handle display cards should display the right cards for people', () => {
+    const mockEvent = { target: {id: 'people' } }
+    wrapper.setState({ people: ['hey'], planets: ['whats'], vehicles: ['up'] })
+    wrapper.instance().handleDisplayCards(mockEvent)
+    expect(wrapper.state('cardType')).toEqual('people')
+  })
+
+  it('handle display cards should display the right cards for planets', () => {
+    const mockEvent = { target: {id: 'planets' } }
+    wrapper.setState({ people: ['hey'], planets: ['whats'], vehicles: ['up'] })
+    wrapper.instance().handleDisplayCards(mockEvent)
+    expect(wrapper.state('cardType')).toEqual('planets')
+  })
+
+  it('handle display cards should display the right cards for vehicles', () => {
+    const mockEvent = { target: {id: 'vehicles' } }
+    wrapper.setState({ people: ['hey'], planets: ['whats'], vehicles: ['up'] })
+    wrapper.instance().handleDisplayCards(mockEvent)
+    expect(wrapper.state('cardType')).toEqual('vehicles')
+  })
+
+  it('handle display cards should display the right cards for favorites', () => {
+    const mockEvent = { target: {id: 'favorites' } }
+    wrapper.instance().handleDisplayCards(mockEvent)
+    expect(wrapper.state('cardType')).toEqual('favorites')
+  })
+
+  it('if fetch fails get people data should return an error', async () => {
+    const mockData = 'https://swapi.co/api/people/'
+
+    window.fetch = jest.fn().mockImplementation(() => 
+    Promise.resolve({
+      ok: true, 
+      json: () => Promise.resolve({ name: 'human', population: 1 })
+    }))
+    const expected = new Error('failed')
+    
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject(new Error('failed')))
+
+    await expect(wrapper.instance().getPeopleData(mockData)).rejects.toEqual(expected)
+  })
+
+  it('if fetch fails get planet data should return an error', async () => {
+    const mockData = 'https://swapi.co/api/planets/'
+
+    window.fetch = jest.fn().mockImplementation(() => 
+    Promise.resolve({
+      ok: true, 
+      json: () => Promise.resolve({ name: 'human', population: 1 })
+    }))
+    const expected = new Error('failed')
+    
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject(new Error('failed')))
+
+    await expect(wrapper.instance().getPlanetData(mockData)).rejects.toEqual(expected)
+  })
+
+  it('if fetch fails get vehicle data should return an error', async () => {
+    const mockData = 'https://swapi.co/api/vehicles/'
+
+    window.fetch = jest.fn().mockImplementation(() => 
+    Promise.resolve({
+      ok: true, 
+      json: () => Promise.resolve({ name: 'human', population: 1 })
+    }))
+    const expected = new Error('failed')
+    
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject(new Error('failed')))
+
+    await expect(wrapper.instance().getVehicleData(mockData)).rejects.toEqual(expected)
+  })
+
+  it('if fetch fails get movie data should return an error', async () => {
+    const mockData = 'https://swapi.co/api/films/'
+
+    window.fetch = jest.fn().mockImplementation(() => 
+    Promise.resolve({
+      ok: true, 
+      json: () => Promise.resolve({ name: 'human', population: 1 })
+    }))
+    const expected = new Error('failed')
+    
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject(new Error('failed')))
+
+    await expect(wrapper.instance().getMovieData(mockData)).rejects.toEqual(expected)
+  })
 
 })
