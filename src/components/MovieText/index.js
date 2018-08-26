@@ -12,8 +12,8 @@ const MovieText = ({ movies }) => {
   )
 }
 
-// MovieText.propTypes = {
-//   movies: PropTypes.array
-// }
+MovieText.propTypes = {
+  movies: PropTypes.object
+}
 
 export default MovieText

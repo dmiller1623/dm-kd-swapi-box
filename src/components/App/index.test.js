@@ -41,4 +41,23 @@ describe('App', () => {
     wrapper.instance().getMovieData(url)
     expect(wrapper.state('movies')).toEqual(['hello'])
   })
+
+  it('update favorites should add a card to the array and add 1 to the count' , () => {
+    const mockData = { first: 'Luke Skywalker', second: 'human', third: 'tatooine', fourth: 200}
+    wrapper.setState({ favorites: []})
+    wrapper.instance().updateFavorites(mockData)
+    expect(wrapper.state('numOfFaves')).toEqual(1)
+    expect(wrapper.state('favorites')).toEqual([mockData])
+  })
+
+  it('update favorites should remove a card if that card already is in the array and subtract 1 from the count', () => {
+    const mockData = [{ first: 'Luke Skywalker', second: 'human', third: 'tatooine', fourth: 200}]
+    const mockCard = { first: 'Luke Skywalker', second: 'human', third: 'tatooine', fourth: 200}
+    wrapper.instance().updateFavorites(mockCard)
+    expect(wrapper.state('numOfFaves')).toEqual(1)
+    wrapper.instance().updateFavorites(mockCard)
+    expect(wrapper.state('favorites')).toHaveLength(0)
+    expect(wrapper.state('numOfFaves')).toEqual(0)
+  })
+
 })
