@@ -3,7 +3,6 @@ import './styles.css'
 
 const LoadingPage = ({ cardType }) => {
   if(cardType === 'people') {
-    console.log(cardType)
     return ( 
       <div className='loading-page-people'></div>
     )
