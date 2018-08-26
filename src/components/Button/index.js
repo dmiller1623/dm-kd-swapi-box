@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const Button = ({ handleDisplayCards, evaluateButtonClass }) => {
   return (
     <div className={'button-container'}>
-      <div className={evaluateButtonClass('people')} id='people' onClick={(e) => { handleDisplayCards(e); }}>people</div>
-      <div className={evaluateButtonClass('planets')}  id='planets' onClick={(e) => handleDisplayCards(e)}>planets</div>
-      <div className={evaluateButtonClass('vehicles')}  id='vehicles' onClick={(e) => handleDisplayCards(e)}>vehicles</div>
+      <div className={evaluateButtonClass('people')} id='people' onClick={(event) => { handleDisplayCards(event); }}>people</div>
+      <div className={evaluateButtonClass('planets')}  id='planets' onClick={(event) => handleDisplayCards(event)}>planets</div>
+      <div className={evaluateButtonClass('vehicles')}  id='vehicles' onClick={(event) => handleDisplayCards(event)}>vehicles</div>
     </div>
   );
 };

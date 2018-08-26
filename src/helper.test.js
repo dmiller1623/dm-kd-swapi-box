@@ -1,6 +1,6 @@
-import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from './helper.js';
+import { peopleScrape, vehicleScrape, movieScrape } from './helper.js';
 
-describe('peopleScrape, planetScrape, and vehicleScrape', () => {
+describe('peopleScrape, and vehicleScrape', () => {
   let mockData;
 
   it('planetScrape should return the right species and homeworld', async () => {
@@ -10,7 +10,18 @@ describe('peopleScrape, planetScrape, and vehicleScrape', () => {
         ok: true, 
         json: () => Promise.resolve({ name: 'human', population: 1 })
       }));
-    const expected = [{"first": undefined, "fourth": "Pop: 1", "second": "Species: human", "third": "Homeworld: human"}, {"first": undefined, "fourth": "Pop: 1", "second": "Species: human", "third": "Homeworld: human"}];
+    const expected = [{
+      "first": undefined, 
+      "fourth": "Pop: 1", 
+      "second": "Species: human", 
+      "third": "Homeworld: human"
+    }, 
+    {
+      "first": undefined, 
+      "fourth": "Pop: 1", 
+      "second": "Species: human", 
+      "third": "Homeworld: human"
+    }];
 
     const results = await peopleScrape(mockData);
     expect(results).toEqual(expected);
@@ -29,25 +40,6 @@ describe('peopleScrape, planetScrape, and vehicleScrape', () => {
 
     await expect(peopleScrape(mockData)).rejects.toEqual(expected);
   });
-
-  // it('should throw an error if status is not ok', async () => {
-  //   const expected = new Error('status is not ok')
-
-  //   window.fetch = jest.fn().mockImplementation(() => 
-  //   Promise.resolve({
-  //     ok: false, 
-  //     json: () => Promise.resolve({ name: 'human', population: 1 })
-  //   }))
-  //   await expect(peopleScrape(mockData)).rejects.toEqual(expected)
-
-  // })
-
-  // it('planetScrape should return the right data', async () => {
-  //   const residentsScraper = jest.fn()
-  //   mockData = { results: [ {name: 'Alderann', residents: ['https://swapi.co/api/people/5/'], terrain: 'swamp', population: 2, climate: 'frozen' } ] }
-  //   const results = await planetScrape(mockData)
-  //   expect(residentsScraper).toHaveBeenCalled()
-  // })
 
   it('vehicleScrape should return the right vehicle data', async () => {
     const expected = [{"first": "Alderann", "fourth": "Passengers: 5", "second": "Model: diggerCrawler", "third": "Class: wheeled"}];

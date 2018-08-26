@@ -1,0 +1,4 @@
+#data files
+/src/registerServiceWorker.js
+/coverage/lcov-report/sorter.js
+/coverage/lcov-report/prettify.js

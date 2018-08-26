@@ -1,6 +1,4 @@
-import React from 'react';
 import { residentsScraper } from './residentsScraper.js';
-import { shallow } from 'enzyme';
 
 describe('residentScraper', () => {
   let mockData;

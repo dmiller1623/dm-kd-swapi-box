@@ -25,6 +25,7 @@ class App extends Component {
 
   componentDidMount = () => {
     const moviesUrl = `https://swapi.co/api/films/${movieScrape()}/`;
+
     this.getMovieData(moviesUrl);
   }
 
@@ -40,6 +41,7 @@ class App extends Component {
 
   getPeopleData = async (url) => {
     if (this.state.people.length) return; 
+
     try {
       this.setState({ isLoading: true });
       const response = await fetch(url);
@@ -54,6 +56,7 @@ class App extends Component {
 
   getPlanetData = async (url) => {
     if (this.state.planets.length) return; 
+
     try {
       this.setState({ isLoading: true });
       const response = await fetch(url);
@@ -68,6 +71,7 @@ class App extends Component {
 
   getVehicleData = async (url) => {
     if (this.state.vehicles.length) return; 
+
     try {
       this.setState({ isLoading: true });
       const response = await fetch(url);
@@ -82,7 +86,9 @@ class App extends Component {
 
   evaluateButtonClass = (type) => {
     let futureClass = 'button';
+
     if (type === this.state.cardType) futureClass += ' selected';
+
     return futureClass;
   }
 
@@ -90,18 +96,16 @@ class App extends Component {
     const peopleUrl = 'https://swapi.co/api/people/';
     const planetsUrl = 'https://swapi.co/api/planets/';
     const vehiclesUrl = 'https://swapi.co/api/vehicles/';
+
     if (event.target.id === 'people') {
       this.getPeopleData(peopleUrl);
-      this.setState({ cardType: 'people' });
-      
+      this.setState({ cardType: 'people' });     
     } else if (event.target.id === 'planets') {
       this.getPlanetData(planetsUrl);
       this.setState({ cardType: 'planets' });
-      
     } else if (event.target.id === 'vehicles') {
       this.getVehicleData(vehiclesUrl);
-      this.setState({ cardType: 'vehicles' });
-      
+      this.setState({ cardType: 'vehicles' }); 
     } else if (event.target.id === 'favorites') {
       this.setState({ cardType: 'favorites'});
     }
@@ -109,66 +113,70 @@ class App extends Component {
 
   updateFavorites = (card) => {
     let favorites;
+    let numOfFaves = this.state.numOfFaves;
     let favoriteNames = this.state.favorites.map(favorite => favorite.first);
 
     if (favoriteNames.includes(card.first)) {
-      this.state.numOfFaves--; 
+      numOfFaves--; 
       favorites = this.state.favorites.filter(favorite => favorite.first !== card.first);
-      this.setState({ favorites });
     } else { 
-      this.state.numOfFaves++;
+      numOfFaves++; 
       let newFavorite = {...card};
       favorites = [...this.state.favorites, newFavorite];
     }
-    this.setState({ favorites });
+
+    this.setState({ favorites, numOfFaves });
   }
 
-    evaluateClass = (card) => {
-      let futureClass = 'fav-button';
-      let favoriteNames = this.state.favorites.map(favorite => favorite.first);
-      if (favoriteNames.includes(card.first)) futureClass += ' clicked';
-      return futureClass;
-    }
+  evaluateClass = (card) => {
+    let futureClass = 'fav-button';
 
-    render() {
-      if (this.state.isLoading) {
-        return (<LoadingPage cardType={this.state.cardType}/>);
-      } else {
-        return (
-          <div className='app'>
-            <div className='movie-parent'>
-              <MovieText movies={this.state.movies}/>
+    let favoriteNames = this.state.favorites.map(favorite => favorite.first);
+
+    if (favoriteNames.includes(card.first)) futureClass += ' clicked';
+    
+    return futureClass;
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return (<LoadingPage cardType={this.state.cardType}/>);
+    } else {
+      return (
+        <div className='app'>
+          <div className='movie-parent'>
+            <MovieText movies={this.state.movies}/>
+          </div>
+          <div className='main-section'>
+            <div className='header-parent'>
+              <Header 
+                numOfFaves={this.state.numOfFaves}
+                handleDisplayCards={this.handleDisplayCards}
+                evaluateButtonClass={this.evaluateButtonClass}
+              />
             </div>
-            <div className='main-section'>
-              <div className='header-parent'>
-                <Header 
-                  numOfFaves={this.state.numOfFaves}
-                  handleDisplayCards={this.handleDisplayCards}
-                  evaluateButtonClass={this.evaluateButtonClass}
-                />
-              </div>
-              <div className='button-parent'>
-                <Button 
-                  handleDisplayCards={this.handleDisplayCards}
-                  evaluateButtonClass={this.evaluateButtonClass}/>
-              </div>
-              <div className='card-container-parent'>
-                {this.state.cardType === 'welcome' && <h1 className='welcome-message'>Select a button from above</h1>}
-                <CardContainer 
-                  people={this.state.people} 
-                  vehicles={this.state.vehicles} 
-                  planets={this.state.planets}
-                  cardType={this.state.cardType}
-                  updateFavorites={this.updateFavorites}
-                  favorites={this.state.favorites}
-                  evaluateClass={this.evaluateClass}
-                />
-              </div>
+            <div className='button-parent'>
+              <Button 
+                handleDisplayCards={this.handleDisplayCards}
+                evaluateButtonClass={this.evaluateButtonClass}/>
+            </div>
+            <div className='card-container-parent'>
+              {this.state.cardType === 'welcome' && <h1 className='welcome-message'>Select a button from above</h1>}
+              <CardContainer 
+                people={this.state.people} 
+                vehicles={this.state.vehicles} 
+                planets={this.state.planets}
+                cardType={this.state.cardType}
+                updateFavorites={this.updateFavorites}
+                favorites={this.state.favorites}
+                evaluateClass={this.evaluateClass}
+              />
             </div>
           </div>
-        );
-      }
+        </div>
+      );
     }
+  }
 }
 
 export default App;

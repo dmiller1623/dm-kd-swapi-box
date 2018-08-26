@@ -8,7 +8,7 @@ const Header = ({ numOfFaves, handleDisplayCards, evaluateButtonClass }) => {
       <div></div>
       <img src='https://fontmeme.com/permalink/180823/038124195840fbb42b03e437645af736.png'></img>
       <div className='favorites-button'>
-        <p className={evaluateButtonClass('favorites')} id='favorites' onClick={(e) => handleDisplayCards(e)}>View Favorites
+        <p className={evaluateButtonClass('favorites')} id='favorites' onClick={(event) => handleDisplayCards(event)}>View Favorites
           <div className='fav-num'>{numOfFaves}</div>
         </p>
       </div>
