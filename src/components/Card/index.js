@@ -17,8 +17,8 @@ const Card = (props) => {
         <h5 className='card-data'>Residents:</h5>
         {!props.fifth.length && <h5 className='card-data spacing'>0</h5>}
         { 
-          props.fifth.map((person, i) => {
-            return <h5 key={i} className='card-data spacing'>{person}</h5>;
+          props.fifth.map((person, index) => {
+            return <h5 key={index} className='card-data spacing'>{person}</h5>;
           })
         }
       </div>}
@@ -32,7 +32,9 @@ Card.propTypes = {
   second: PropTypes.string,
   third: PropTypes.string,
   fourth: PropTypes.string,
-  fifth: PropTypes.array
+  fifth: PropTypes.array,
+  updateFavorites: PropTypes.func,
+  evaluateClass: PropTypes.func
 };
 
 export default Card;
