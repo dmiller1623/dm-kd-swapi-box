@@ -18,7 +18,8 @@ const Header = ({ numOfFaves, handleDisplayCards, evaluateButtonClass }) => {
 
 Header.propTypes = {
   numOfFaves: PropTypes.number,
-  handleDisplayCards: PropTypes.func
+  handleDisplayCards: PropTypes.func,
+  evaluateButtonClass: PropTypes.func
 }
 
 export default Header;

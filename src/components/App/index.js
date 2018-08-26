@@ -87,7 +87,6 @@ class App extends Component {
   }
 
   handleDisplayCards = async (event) => {
-    console.log(event)
     const peopleUrl = 'https://swapi.co/api/people/'
     const planetsUrl = 'https://swapi.co/api/planets/'
     const vehiclesUrl = 'https://swapi.co/api/vehicles/'

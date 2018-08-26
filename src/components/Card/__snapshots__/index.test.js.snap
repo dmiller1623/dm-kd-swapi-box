@@ -31,16 +31,20 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          className={undefined}
-          onClick={[Function]}
->
-          FAV
-</button>,
         <h2
-          className="card-data"
+          className="card-data first-data"
 >
           first
+          <div
+                    className="button-spacing"
+          >
+                    <button
+                              className={undefined}
+                              onClick={[Function]}
+                    >
+                              FAV
+                    </button>
+          </div>
 </h2>,
         <h4
           className="card-data"
@@ -66,12 +70,11 @@ ShallowWrapper {
                     Residents:
           </h5>
           <h5
-                    className="card-data"
+                    className="card-data spacing"
           >
                     Object {
                               "name": "name",
                             }
-                    , 
           </h5>
 </div>,
       ],
@@ -84,24 +87,54 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "FAV",
-          "className": undefined,
-          "onClick": [Function],
+          "children": Array [
+            "first",
+            <div
+              className="button-spacing"
+>
+              <button
+                            className={undefined}
+                            onClick={[Function]}
+              >
+                            FAV
+              </button>
+</div>,
+          ],
+          "className": "card-data first-data",
         },
         "ref": null,
-        "rendered": "FAV",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "first",
-          "className": "card-data",
-        },
-        "ref": null,
-        "rendered": "first",
+        "rendered": Array [
+          "first",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className={undefined}
+                onClick={[Function]}
+>
+                FAV
+</button>,
+              "className": "button-spacing",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "FAV",
+                "className": undefined,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "FAV",
+              "type": "button",
+            },
+            "type": "div",
+          },
+        ],
         "type": "h2",
       },
       Object {
@@ -154,12 +187,11 @@ ShallowWrapper {
             false,
             Array [
               <h5
-                className="card-data"
+                className="card-data spacing"
 >
                 Object {
                                 "name": "name",
                               }
-                , 
 </h5>,
             ],
           ],
@@ -185,21 +217,15 @@ ShallowWrapper {
             "key": "0",
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                Object {
-                  "name": "name",
-                },
-                ", ",
-              ],
-              "className": "card-data",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
+              "children": Object {
                 "name": "name",
               },
-              ", ",
-            ],
+              "className": "card-data spacing",
+            },
+            "ref": null,
+            "rendered": Object {
+              "name": "name",
+            },
             "type": "h5",
           },
         ],
@@ -215,16 +241,20 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <button
-            className={undefined}
-            onClick={[Function]}
->
-            FAV
-</button>,
           <h2
-            className="card-data"
+            className="card-data first-data"
 >
             first
+            <div
+                        className="button-spacing"
+            >
+                        <button
+                                    className={undefined}
+                                    onClick={[Function]}
+                        >
+                                    FAV
+                        </button>
+            </div>
 </h2>,
           <h4
             className="card-data"
@@ -250,12 +280,11 @@ ShallowWrapper {
                         Residents:
             </h5>
             <h5
-                        className="card-data"
+                        className="card-data spacing"
             >
                         Object {
                                     "name": "name",
                                   }
-                        , 
             </h5>
 </div>,
         ],
@@ -268,24 +297,54 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "FAV",
-            "className": undefined,
-            "onClick": [Function],
+            "children": Array [
+              "first",
+              <div
+                className="button-spacing"
+>
+                <button
+                                className={undefined}
+                                onClick={[Function]}
+                >
+                                FAV
+                </button>
+</div>,
+            ],
+            "className": "card-data first-data",
           },
           "ref": null,
-          "rendered": "FAV",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "first",
-            "className": "card-data",
-          },
-          "ref": null,
-          "rendered": "first",
+          "rendered": Array [
+            "first",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className={undefined}
+                  onClick={[Function]}
+>
+                  FAV
+</button>,
+                "className": "button-spacing",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "FAV",
+                  "className": undefined,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "FAV",
+                "type": "button",
+              },
+              "type": "div",
+            },
+          ],
           "type": "h2",
         },
         Object {
@@ -338,12 +397,11 @@ ShallowWrapper {
               false,
               Array [
                 <h5
-                  className="card-data"
+                  className="card-data spacing"
 >
                   Object {
                                     "name": "name",
                                   }
-                  , 
 </h5>,
               ],
             ],
@@ -369,21 +427,15 @@ ShallowWrapper {
               "key": "0",
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  Object {
-                    "name": "name",
-                  },
-                  ", ",
-                ],
-                "className": "card-data",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
+                "children": Object {
                   "name": "name",
                 },
-                ", ",
-              ],
+                "className": "card-data spacing",
+              },
+              "ref": null,
+              "rendered": Object {
+                "name": "name",
+              },
               "type": "h5",
             },
           ],
