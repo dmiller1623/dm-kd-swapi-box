@@ -103,6 +103,24 @@ describe('App', () => {
     expect(wrapper.state('numOfFaves')).toEqual(0)
   })
 
-  
+  it('evaluateClass should have the class of fav button', () => {
+    let mockdata = { first: 'Leia Skywalker' }
+    let mockState = [ { first: 'Luke Skywalker', second: 'human', third: 'tatooine', fourth: 200}]
+    wrapper.setState({ favorites: mockState})
+    const results = wrapper.instance().evaluateClass(mockdata)
+
+    expect(results).toEqual('fav-button')
+  })
+
+  it('evaluateClass should have the class of fav button and clicked', () => {
+    let mockdata = { first: 'Luke Skywalker' }
+    let mockState = [ { first: 'Luke Skywalker', second: 'human', third: 'tatooine', fourth: 200}]
+    wrapper.setState({ favorites: mockState})
+    const results = wrapper.instance().evaluateClass(mockdata)
+
+    expect(results).toEqual('fav-button clicked')
+  })
+
+  it('evaluateButtonClass  ')
 
 })
