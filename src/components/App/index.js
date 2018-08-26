@@ -4,7 +4,7 @@ import Header from '../Header';
 import CardContainer from '../CardContainer'
 import Button from '../Button'
 import MovieText from '../MovieText';
-import { peopleScrape, planetScrape, vehicleScrape } from '../../helper';
+import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from '../../helper';
 import LoadingPage from '../LoadingPage';
 
 
@@ -24,47 +24,61 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    const moviesUrl = 'https://swapi.co/api/films/4/'
+    const moviesUrl = `https://swapi.co/api/films/${movieScrape()}/`
     this.getMovieData(moviesUrl)
   }
 
   getMovieData = async (url) => {
+    try {
     const response = await fetch(url)
     const movies = await response.json()
     this.setState({ movies })
+    } catch(error) {
+      throw new Error(error.message)
+    }
   }
 
   getPeopleData = async (url) => {
+    console.log(url)
     if(this.state.people.length) return 
-
+    try {
     this.setState({ isLoading: true })
     const response = await fetch(url)
     const info = await response.json()
     const people = await peopleScrape(info)
     this.setState({ people })
     await this.setState({ isLoading: false })
+    } catch(error) {
+      throw new Error(error.message)
+    }
   }
 
   getPlanetData = async (url) => {
     if(this.state.planets.length) return 
-
+    try {
     this.setState({ isLoading: true })
     const response = await fetch(url)
     const info = await response.json()
     const planets = await planetScrape(info)
     this.setState({ planets })
     await this.setState({ isLoading: false })
+    } catch(error) {
+      throw new Error(error.message)
+    }
   }
 
   getVehicleData = async (url) => {
     if(this.state.vehicles.length) return 
-
+    try {
     this.setState({ isLoading: true })
     const response = await fetch(url)
     const info = await response.json()
     const vehicles = await vehicleScrape(info)
     this.setState({ vehicles })
     await this.setState({ isLoading: false })
+    } catch(error) {
+      throw new Error(error.message)
+    }
   }
 
   evaluateButtonClass = (type) => {

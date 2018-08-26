@@ -1,4 +1,4 @@
-import { peopleScrape, planetScrape, vehicleScrape } from './helper.js'
+import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from './helper.js'
 
 describe('peopleScrape, planetScrape, and vehicleScrape', () => {
   let mockData
@@ -51,11 +51,25 @@ describe('peopleScrape, planetScrape, and vehicleScrape', () => {
 
   // })
 
-  it('planetScrape should return the right planet data', async () => {
-    const mockRedisdentsScraper = jest.fn
-    mockData = [ {name: 'Alderann'}, {name: 'Dagobah'} ]
-    const results = await planetScrape(mockData)
+  // it('planetScrape should return the right data', async () => {
+  //   const residentsScraper = jest.fn()
+  //   mockData = { results: [ {name: 'Alderann', residents: ['https://swapi.co/api/people/5/'], terrain: 'swamp', population: 2, climate: 'frozen' } ] }
+  //   const results = await planetScrape(mockData)
+  //   expect(residentsScraper).toHaveBeenCalled()
+  // })
+
+  it('vehicleScrape should return the right vehicle data', async () => {
+    const expected = [{"first": "Alderann", "fourth": "Passengers: 5", "second": "Model: diggerCrawler", "third": "Class: wheeled"}]
+    mockData = { results: [ {name: 'Alderann', model: 'diggerCrawler', vehicle_class: 'wheeled', passengers: 5 } ] }
+    const results = await vehicleScrape(mockData)
     
+    expect(results).toEqual(expected)
+  })
+
+  it('movieScraper should return a random number', () => {
+    const results = movieScrape()
+    expect(results).toBeLessThan(7)
+    expect(results).toBeGreaterThan(-1)
   })
 
 })

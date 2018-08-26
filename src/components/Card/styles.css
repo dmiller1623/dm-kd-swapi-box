@@ -1,12 +1,14 @@
 .card {
   background-repeat: no-repeat;
   border-radius: 15px;
+  border: 1px solid #f3f3f3;
   box-shadow: 10px 5px 5px #202020;
   background-size: contain;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   width: 20rem;
+  padding-left: .75rem;
   height: 23.5rem; }
 
 .card-data {

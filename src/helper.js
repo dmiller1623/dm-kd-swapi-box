@@ -48,11 +48,7 @@ export const vehicleScrape = (data) => {
   return Promise.all(vehicleData)
 }
 
-// export const movieScrape = (data) => {
-//   const movieData = data.results.find(async (movie) => {
-//     console.log(movie)
-//     return movie === 3
-//   })
-//   console.log(movieData)
-//   return movieData
-// }
+export const movieScrape = () => {
+  let randomNum = Math.random() * (6 - 0) + 0
+  return Math.round(randomNum)
+}
