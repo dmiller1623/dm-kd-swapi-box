@@ -3,7 +3,7 @@ import './styles.css';
 import Header from '../Header';
 import CardContainer from '../CardContainer';
 import Button from '../Button';
-import MovieText from '../MovieText';
+import MovieText from '../MovieText'
 import { peopleScrape, planetScrape, vehicleScrape, movieScrape } from '../../helper';
 import LoadingPage from '../LoadingPage';
 
