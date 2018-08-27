@@ -17,7 +17,6 @@ If you would like to favorite a card, there is a fav button in the right corner 
 also clicking it again will remove that card from the favorites.
 If you would like to view all of the favorites selected you can click the view favorites button.
 
-## Screenshot
+## GIF
 
-
-<img src="./images/ezgif.com-video.to-gif.giff">
+![](ezgif.com-video.to-gif.gif)
