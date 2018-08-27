@@ -19,4 +19,3 @@ If you would like to view all of the favorites selected you can click the view f
 
 ## GIF
 
-![](ezgif.com-video.to-gif.gif)
