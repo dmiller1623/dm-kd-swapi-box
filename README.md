@@ -18,5 +18,5 @@ also clicking it again will remove that card from the favorites.
 If you would like to view all of the favorites selected you can click the view favorites button.
 
 ## GIF
-
+<img src='https://github.com/dmiller1623/dm-kd-swapi-box/blob/master/Images/ezgif.com-video-to-gif.gif'>
 
