@@ -5,6 +5,8 @@ SWAPI - box is a project is using react that fetches data from a Star Wars Api. 
  
 ## Set Up
 
+clone down this repo https://github.com/dmiller1623/dm-kd-swapi-box.git
+
 Run `npm install` from the root directory
 
 Run `npm start` and visit localhost:3000 in your browser
